@@ -1,0 +1,1 @@
+print('Hurry up')
