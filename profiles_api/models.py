@@ -21,7 +21,7 @@ class UserProfileManager(BaseUserManager):
 
     def create_superuser(self, email, name, password):
         """create super user with given details"""
-        user = self.create_superuser(email, name, password)
+        user = self.create_user(email, name, password)
 
         user.is_superuser = True
         user.is_staff = True
@@ -30,7 +30,7 @@ class UserProfileManager(BaseUserManager):
         return user
 
 
-class UserProfiles(AbstractBaseUser, PermissionsMixin):
+class UserProfile(AbstractBaseUser, PermissionsMixin):
     """Database model for userins in the system"""
     """Customize the default user model"""
     email = models.EmailField(max_length=255, unique=True)
@@ -47,7 +47,7 @@ class UserProfiles(AbstractBaseUser, PermissionsMixin):
         """Retrieve full name of user"""
         return self.name
     
-    def get_short_name(slef):
+    def get_short_name(self):
         """Retrieve short name"""
         return self.name
 
