@@ -4,7 +4,8 @@ from rest_framework import status # list of http status codes
 from profiles_api import serializers
 from rest_framework import viewsets
 from profiles_api import models
-
+from rest_framework.authentication import TokenAuthentication
+from profiles_api import permissions
 
 class HelloAPIView(APIView):
     """Test API View"""
@@ -98,3 +99,5 @@ class UserProfileViewSet(viewsets.ModelViewSet):
     """Handles creatig and updating profiles"""
     serializer_class = serializers.UserProfileSerializer
     queryset = models.UserProfile.objects.all() #django already knows all the http requests
+    authentication_classes = (TokenAuthentication,) # comma creates this as a tuple
+    permission_classes = (permissions.UpdateOwnProfile,)
