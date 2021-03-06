@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from rest_framework import status # list of http status codes
 from profiles_api import serializers
 from rest_framework import viewsets
-from profiles_api import model
+from profiles_api import models
 
 
 class HelloAPIView(APIView):

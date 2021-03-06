@@ -14,7 +14,7 @@ class UserProfileSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.UserProfile
-        fields = ('id', 'email' 'name', 'password')
+        fields = ('id', 'email', 'name', 'password')
         # custom config so pw is write only
         extra_kwargs = {
             'password': {
@@ -35,7 +35,7 @@ class UserProfileSerializer(serializers.ModelSerializer):
     def update(self, instance, validated_data):
         """handle updating user accounts"""
         if 'password' in validated_data:
-            password = validated_data.pop('password'):
+            password = validated_data.pop('password')
             instance.set_password(password)
 
         return super().update(instance, validated_data)
