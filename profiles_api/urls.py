@@ -8,5 +8,6 @@ router.register('profile', views.UserProfileViewSet)
 
 urlpatterns = [
     path('hello-view/', views.HelloAPIView.as_view()), # register an APIView
+    path('login/', views.UserLoginApiView.as_view()), # register the login view
     path('', include(router.urls)) # register the ViewSet
 ]
