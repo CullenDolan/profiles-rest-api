@@ -60,10 +60,10 @@ class ProfileFeedItem(models.Model):
     """profile status update"""
     """set up a foreign key"""
     user_profile = models.ForeignKey(
-        settings.AUTH_USER_MODEL
+        settings.AUTH_USER_MODEL,
+        on_delete = models.CASCADE #this will delete all the users data
     )
-    on_delete = models.CASCADE, #this will delete all the users data
-    status_text = models.Charfiedl(max_length=255),
+    status_text = models.CharField(max_length=255)
     created_on = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
