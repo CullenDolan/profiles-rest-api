@@ -24,7 +24,7 @@ SECRET_KEY = 'CHANGEME'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(int(os.environ.get('DEBUG',1))) # if debug in supervisor file is set to 0 then
 
-ALLOWED_HOSTS = ['ec2-54-172-108-16.compute-1.amazonaws.com',
+ALLOWED_HOSTS = ['ec2-34-228-44-30.compute-1.amazonaws.com',
                 '127.0.0.1']
 
 
