@@ -135,3 +135,5 @@ static/
 
 vagrant_2.2.6_x86_64.deb
 Vagrantfile
+
+skeleton_keys.py
